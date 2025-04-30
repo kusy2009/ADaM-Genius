@@ -11,7 +11,7 @@ This project provides an AI-powered tool for exploring and understanding ADaM (A
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/adam-genius.git
+git clone https://github.com/kusy2009/adam-genius.git
 cd adam-genius
 ```
 
@@ -30,6 +30,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root with your OpenAI API key:
 ```
 OPENAI_API_KEY=your_openai_api_key_here
+CDISC_API_KEY=your_cdisc_api_key_here
 ```
 
 ## Project Components
@@ -107,7 +108,5 @@ python adam_genius.py AGE
 5. Create a Pull Request
 
 ## License
-[Specify your license here, e.g., MIT]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
-[Your contact information]
