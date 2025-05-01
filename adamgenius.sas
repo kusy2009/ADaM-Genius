@@ -1,31 +1,32 @@
-/**
+/** 
 @file adamgenius.sas
-@brief 
+@brief Retrieve metadata for a specified ADaM variable using CDISC Library API.
+
 @details
+This macro automates the retrieval of metadata for a given ADaM variable using the CDISC Library REST API. If the user does not specify an ADaM Implementation Guide (adamIG) version or Controlled Terminology (CT) version, the macro fetches the latest available versions dynamically. It identifies the dataset to which the variable belongs, extracts detailed metadata about the variable, and retrieves any associated codelist submission values. If a codelist is referenced, it queries the appropriate CT package (ADaM or SDTM as fallback) and displays submission/decoded values.
 
+Syntax
+@code
+%adamgenius(adamvar=AVAL, adamigversion=1.2, adamctversion=2023-12-15)
+@endcode
 
-@param adamvar Description of adamvar
-@param adamigversion Description of adamigversion
-@param adamctversion Description of adamctversion
+Usage
+@code
+%let cdiscapikey = <your_api_key>;
+%adamgenius(adamvar=PARAMCD);
+@endcode
 
+@param adamvar= The ADaM variable name to extract metadata for.
+@param adamigversion= (Optional) Specific version of the ADaM Implementation Guide to use.
+@param adamctversion= (Optional) Specific version of the ADaM Controlled Terminology to use.
 
-@return 
+@return Displays metadata about the variable, including its dataset, label, and any associated controlled terminology (if available). Also prints submission and decoded values from the CT packages.
+
 @version 1.0
-@author 
+@author Saikrishnareddy Yengannagari
 
-
-
-
-
-
-
-
-
-
-
-
-
-@maintenance 2025-04-24: Initial implementation []
+<h4> Related Macros </h4>
+@li %GetCDISCCodelist
 */
 
 %macro adamgenius(adamvar=, adamigversion=, adamctversion=);
