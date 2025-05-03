@@ -23,7 +23,7 @@ def extract_adam_variable(query):
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are an expert in extracting ADaM variable names from natural language queries. Always return ONLY the variable name in uppercase."},
                 {"role": "user", "content": f"Extract the ADaM variable name from this query: {query}"}
@@ -56,7 +56,7 @@ def generate_natural_response(variable, metadata):
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are an expert in explaining ADaM variable metadata in a friendly, conversational manner."},
                 {"role": "user", "content": f"Given this metadata for {variable}, provide a clear, easy-to-understand explanation:\n{metadata}"}
