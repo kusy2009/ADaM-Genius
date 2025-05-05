@@ -41,13 +41,7 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ### 3. Install Dependencies
 Install requirements for both the API assistant and the RAG component:
 ```bash
-# Assuming requirements.txt includes streamlit, openai, python-dotenv, requests
-# and requirements_rag.txt (or similar) includes llama-index, etc.
-pip install -r requirements.txt
-# You might need a separate requirements file for llama-index dependencies
 # pip install -r requirements_rag.txt 
-# Or install directly:
-pip install llama-index python-dotenv
 ```
 *(Note: You may need to adjust the requirements file(s) based on the specific libraries used by `adamrag.py` and its dependencies.)*
 
