@@ -67,7 +67,7 @@ Retrieves and formats metadata for specific ADaM variables.
 
 #### Usage
 ```bash
-python adam_genius.py AGE
+python adam_genius.py ASTDTF
 ```
 
 ## Workflow Examples
@@ -92,7 +92,7 @@ streamlit run streamlit_app.py
 ### Scenario 3: Direct Metadata Retrieval
 ```bash
 # Get metadata for a specific variable
-python adam_genius.py AGE
+python adam_genius.py ABLFL
 ```
 
 ## Troubleshooting
