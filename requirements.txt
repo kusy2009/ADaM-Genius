@@ -4,3 +4,4 @@ python-dotenv
 tabulate
 openai
 streamlit
+llama-index
