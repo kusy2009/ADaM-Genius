@@ -40,7 +40,7 @@ Allows extracting and explaining ADaM variables directly from the terminal.
 
 #### Usage
 ```bash
-python adamai.py "What is the variable for patient age?"
+python adamai.py "Fetch vairbale metsdata for APHASE?"
 ```
 
 #### Features
@@ -75,7 +75,7 @@ python adam_genius.py AGE
 ### Scenario 1: Command-Line Variable Extraction
 ```bash
 # Extract variable and get metadata
-python adamai.py "Tell me about patient age in clinical trials"
+python adamai.py "Tell me about DTYPE variable and its associated codelists"
 ```
 
 ### Scenario 2: Web Interface Exploration
@@ -85,7 +85,7 @@ streamlit run streamlit_app.py
 
 # In the web interface:
 # 1. Enter a natural language query
-# 2. Click "Get Variable Details"
+# 2. Press Enter
 # 3. View extracted variable, metadata, and explanation
 ```
 
