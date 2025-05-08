@@ -43,13 +43,14 @@ def extract_adam_variable(query):
         print(f"Error extracting variable: {e}")
         return None
 
-def generate_natural_response(variable, metadata):
+def generate_natural_response(variable, query, metadata):
     """
-    Use GPT to generate a conversational response based on metadata
+    Use GPT to generate a conversational response based on metadata and the user query.
     
     Args:
         variable (str): ADaM variable name
-        metadata (str): Metadata retrieved from adam_genius.py
+        query (str): User's query about the variable
+        metadata (str): Metadata retrieved for the variable
     
     Returns:
         str: Conversational explanation
@@ -58,15 +59,24 @@ def generate_natural_response(variable, metadata):
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are an expert in explaining ADaM variable metadata in a friendly, conversational manner."},
-                {"role": "user", "content": f"Given this metadata for {variable}, provide a clear, easy-to-understand explanation:\n{metadata}"}
+                {"role": "system", "content": (
+                    "You are an expert in explaining ADaM variable metadata in a friendly, "
+                    "conversational manner. Your task is to read the user query and the metadata, "
+                    "and then generate a response based on the metadata you fetched for the variable." 
+                )},
+                {"role": "user", "content": (
+                    f"Here is the user's query about the ADaM variable {variable}: '{query}'\n"
+                    f"Here is the metadata for the variable {variable}: {metadata}\n"
+                    "Based on this information, provide a clear, very short in 2 lines, easy-to-understand answer and provide actual full {metadata} for reference"
+                )}
             ]
         )
         return response.choices[0].message.content.strip()
-    
+
     except Exception as e:
         print(f"Error generating response: {e}")
         return metadata
+
 
 def main():
     # Check if query is provided
@@ -98,7 +108,7 @@ def main():
         sys.exit(1)
     
     # Generate conversational response
-    conversational_response = generate_natural_response(variable, metadata)
+    conversational_response = generate_natural_response(variable, query, metadata)
     
     print("\n🤖 AI Explanation:")
     print(conversational_response)
