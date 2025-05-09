@@ -88,7 +88,7 @@ python adam_genius.py ABLFL
 Ask questions about the content of the ADaMIG PDF.
 ```bash
 # Ensure ADaMIG PDF is in the 'data' directory (or specify --data-dir)
-python adamrag.py "Explain the purpose of ADSL"
+python adamrag.py "Explain traceability when multiple imputation method id used"
 python adamrag.py --data-dir /path/to/pdf/folder "What are fundamental principles of adam standard"
 ```
 
